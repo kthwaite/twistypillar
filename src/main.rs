@@ -1,7 +1,8 @@
-use pixels::{Error, Pixels, SurfaceTexture};
 use std::time::Instant;
-use winit::dpi::{LogicalPosition, LogicalSize, PhysicalSize};
-use winit::event::{Event, VirtualKeyCode, WindowEvent};
+
+use pixels::{Pixels, SurfaceTexture};
+use winit::dpi::LogicalSize;
+use winit::event::{Event, VirtualKeyCode};
 use winit::event_loop::{ControlFlow, EventLoop};
 use winit::window::WindowBuilder;
 use winit_input_helper::WinitInputHelper;
