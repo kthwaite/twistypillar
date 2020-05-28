@@ -1,0 +1,10 @@
+[package]
+name = "twistypillar"
+version = "0.0.0"
+authors = ["cthwaite <28732700+cthwaite@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+pixels = "^0.0.4"
+winit = "^0.22"
+winit_input_helper = "^0.6"
