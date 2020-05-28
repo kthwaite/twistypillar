@@ -121,7 +121,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut pixels = Pixels::new(SCREEN_WIDTH, SCREEN_HEIGHT, surface_texture)?;
 
     let now = Instant::now();
-    let frame = 1.0f64 / 30.0f64;
+    let frame_time = 1.0 / 30.0;
     let mut last = now.elapsed().as_secs_f64();
 
     let mut pillar_mode = 3;
@@ -158,7 +158,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
 
             let time = now.elapsed().as_secs_f64();
-            if (time - last) > frame {
+            if (time - last) > frame_time {
                 screen.clear();
                 match pillar_mode {
                     0 => column_0(&mut screen, time),
