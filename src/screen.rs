@@ -1,5 +1,7 @@
 use crate::cell::Cell;
 
+// The default PICO-8 palette
+// https://pico-8.fandom.com/wiki/Palette
 pub const DEFAULT_PALETTE: [Cell; 16] = [
     // black
     Cell::new(0, 0, 0),
