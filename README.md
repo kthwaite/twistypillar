@@ -2,7 +2,7 @@
 
 ![](twistypillar.png)
 
-a rust implementation of [this twisty pillar](https://twitter.com/TRASEVOL_DOG/status/1261302684239499265). press left/right to cycle through modes.
+a rust implementation of [this twisty pillar](https://trasevol.dog/2018/01/24/di20/) (see also [this tweet](https://twitter.com/TRASEVOL_DOG/status/1261302684239499265)). press left/right to cycle through modes.
 
 uses
 
