@@ -112,12 +112,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_title("pillar")
         .build(&event_loop)
         .expect("Failed to create window");
-    let surface = pixels::wgpu::Surface::create(&window);
-    let size = window.current_monitor().size();
 
     let mut screen = Screen::new(SCREEN_WIDTH as usize, SCREEN_HEIGHT as usize);
+    let scale_factor = window.scale_factor();
 
-    let surface_texture = SurfaceTexture::new(SCREEN_WIDTH, SCREEN_HEIGHT, surface);
+    let surface_texture = SurfaceTexture::new(
+        (scale_factor * SCREEN_WIDTH as f64) as u32,
+        (scale_factor * SCREEN_HEIGHT as f64) as u32,
+        &window,
+    );
     let mut pixels = Pixels::new(SCREEN_WIDTH, SCREEN_HEIGHT, surface_texture)?;
 
     let now = Instant::now();
@@ -137,7 +140,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
 
-        if input.update(event) {
+        if input.update(&event) {
             if input.key_pressed(VirtualKeyCode::Escape)
                 || input.key_pressed(VirtualKeyCode::Q)
                 || input.quit()
@@ -154,7 +157,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
             // Resize the window
             if let Some(size) = input.window_resized() {
-                pixels.resize(size.width, size.height);
+                pixels.resize_surface(size.width, size.height);
             }
 
             let time = now.elapsed().as_secs_f64();
