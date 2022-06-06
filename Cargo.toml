@@ -2,9 +2,9 @@
 name = "twistypillar"
 version = "0.0.0"
 authors = ["cthwaite <28732700+cthwaite@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-pixels = "^0.4"
-winit = "^0.25"
-winit_input_helper = "^0.10"
+pixels = "^0.9"
+winit = "^0.26"
+winit_input_helper = "^0.12"
